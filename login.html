@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - PropfirmPro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            padding: 100px 20px 40px;
+        }
+
+        .auth-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: #a0a5c0;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #a0a5c0;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(102,126,234,0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .alert {
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.success {
+            background: rgba(0,255,0,0.1);
+            border: 1px solid #0f0;
+            color: #0f0;
+            display: block;
+        }
+
+        .alert.error {
+            background: rgba(255,0,0,0.1);
+            border: 1px solid #f00;
+            color: #f00;
+            display: block;
+        }
+
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .back-home:hover {
+            background: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-home">← Retour à l'accueil</a>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>🚀 PropfirmPro</h1>
+                <p>Rejoignez l'élite du trading</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">🔐 Connexion</button>
+                <button class="auth-tab" data-tab="register">📝 Inscription</button>
+            </div>
+
+            <!-- Formulaire de Connexion -->
+            <div id="loginForm" class="auth-form active">
+                <div id="loginAlert" class="alert"></div>
+                <form id="signinForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" placeholder="exemple@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Se connecter</button>
+                </form>
+            </div>
+
+            <!-- Formulaire d'Inscription -->
+            <div id="registerForm" class="auth-form">
+                <div id="registerAlert" class="alert"></div>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label>Nom complet</label>
+                        <input type="text" id="fullName" placeholder="Jean Dupont" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="regEmail" placeholder="exemple@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" id="regPassword" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmer mot de passe</label>
+                        <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Créer mon compte</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let users = Utils.getAllUsers();
+        const tabs = document.querySelectorAll('.auth-tab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        // Gestion des onglets
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.dataset.tab;
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                if (tabName === 'login') {
+                    loginForm.classList.add('active');
+                    registerForm.classList.remove('active');
+                } else {
+                    loginForm.classList.remove('active');
+                    registerForm.classList.add('active');
+                }
+            });
+        });
+
+        // Inscription
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (!fullName || !email || !password) {
+                showAlert('registerAlert', 'Veuillez remplir tous les champs', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showAlert('registerAlert', 'Les mots de passe ne correspondent pas', 'error');
+                return;
+            }
+            
+            if (users.find(u => u.email === email)) {
+                showAlert('registerAlert', 'Cet email est déjà utilisé', 'error');
+                return;
+            }
+            
+            const newUser = {
+                id: Date.now(),
+                fullName,
+                email,
+                password: btoa(password),
+                balance: 10000,
+                virtualBalance: 100000,
+                positions: [],
+                trades: [],
+                totalProfit: 0
+            };
+            
+            users.push(newUser);
+            Utils.saveAllUsers(users);
+            Utils.setCurrentUser(newUser);
+            
+            showAlert('registerAlert', `Inscription réussie ! Bienvenue ${fullName}`, 'success');
+            
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1500);
+        });
+        
+        // Connexion
+        document.getElementById('signinForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            
+            const user = users.find(u => u.email === email && u.password === btoa(password));
+            
+            if (!user) {
+                showAlert('loginAlert', 'Email ou mot de passe incorrect', 'error');
+                return;
+            }
+            
+            Utils.setCurrentUser(user);
+            showAlert('loginAlert', `Bienvenue ${user.fullName} !`, 'success');
+            
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        });
+        
+        function showAlert(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `alert ${type}`;
+            
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 5000);
+        }
+        
+        const currentUser = Utils.getCurrentUser();
+        if (currentUser) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

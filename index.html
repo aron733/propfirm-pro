@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propfirm Pro - Devenez trader professionnel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🚀 Propfirm<span class="highlight">Pro</span></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="signals.html">Signaux</a>
+                <a href="pricing.html">Tarifs</a>
+                <a href="vip.html">VIP</a>
+                <a href="journal.html">Journal</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-outline">Connexion</a>
+                <a href="login.html?tab=register" class="btn-primary">Démarrer</a>
+            </div>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge">🔥 +87% de réussite</span>
+                    </div>
+                    <h1>Transformez votre <span class="gradient-text">passion</span> en profit</h1>
+                    <p>Rejoignez la meilleure plateforme de prop trading avec des challenges adaptés à tous les niveaux. Accédez à des fonds jusqu'à 2 000 000€.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">15k+</span>
+                            <span class="stat-label">Traders actifs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">€45M</span>
+                            <span class="stat-label">Payouts versés</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="login.html?tab=register" class="btn-primary btn-large">Commencer le challenge</a>
+                        <a href="pricing.html" class="btn-outline btn-large">Voir les tarifs</a>
+                    </div>
+                </div>
+                <div class="hero-chart">
+                    <div class="trading-card">
+                        <canvas id="liveChart" width="500" height="400"></canvas>
+                        <div class="live-data">
+                            <div class="price">€1.234,56</div>
+                            <div class="change positive">+2.34%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi nous choisir ?</h2>
+                <p>Des fonctionnalités pensées pour les traders professionnels</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Jusqu'à 90% de partage</h3>
+                    <p>Gardez la majorité de vos profits avec notre structure de rémunération unique.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Exécution instantanée</h3>
+                    <p>Traitement des ordres en moins de 10ms pour ne jamais rater une opportunité.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Protection du capital</h3>
+                    <p>Des drawdowns flexibles et une gestion des risques optimisée.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analyses avancées</h3>
+                    <p>Tableaux de bord détaillés pour suivre vos performances en temps réel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Académie trading</h3>
+                    <p>Formations gratuites et webinaires avec des traders professionnels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Support 24/7</h3>
+                    <p>Une équipe dédiée pour répondre à toutes vos questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="challenges">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos challenges prop firm</h2>
+                <p>Choisissez le challenge qui correspond à votre style de trading</p>
+            </div>
+            <div class="challenges-grid">
+                
+                <div class="challenge-card">
+                    <div class="challenge-badge">Débutant</div>
+                    <h3>Challenge Starter</h3>
+                    <div class="challenge-price">€249</div>
+                    <div class="challenge-funding">Fonds: 25 000€</div>
+                    <ul class="challenge-features">
+                        <li>✓ Profit target: 8%</li>
+                        <li>✓ Drawdown max: 10%</li>
+                        <li>✓ Durée: illimitée</li>
+                        <li>✓ Levier: 1:30</li>
+                    </ul>
+                    <a href="login.html?challenge=starter" class="btn-primary">Commencer</a>
+                </div>
+                <div class="challenge-card popular">
+                    <div class="popular-badge">⭐ Populaire</div>
+                    <h3>Challenge Pro</h3>
+                    <div class="challenge-price">€499</div>
+                    <div class="challenge-funding">Fonds: 100 000€</div>
+                    <ul class="challenge-features">
+                        <li>✓ Profit target: 10%</li>
+                        <li>✓ Drawdown max: 12%</li>
+                        <li>✓ Durée: illimitée</li>
+                        <li>✓ Levier: 1:50</li>
+                        <li>✓ Support prioritaire</li>
+                    </ul>
+                    <a href="login.html?challenge=pro" class="btn-primary">Commencer</a>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-badge">Expert</div>
+                    <h3>Challenge Elite</h3>
+                    <div class="challenge-price">€999</div>
+                    <div class="challenge-funding">Fonds: 250 000€</div>
+                    <ul class="challenge-features">
+                        <li>✓ Profit target: 12%</li>
+                        <li>✓ Drawdown max: 15%</li>
+                        <li>✓ Durée: illimitée</li>
+                        <li>✓ Levier: 1:100</li>
+                        <li>✓ Accès API</li>
+                        <li>✓ Coach dédié</li>
+                    </ul>
+                    <a href="login.html?challenge=elite" class="btn-primary">Commencer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ils nous font confiance</h2>
+                <p>Rejoignez une communauté de traders performants</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">👨‍💼</div>
+                    <p>"La meilleure décision de ma carrière. J'ai réussi mon challenge en 3 semaines et je trade maintenant avec 100k€."</p>
+                    <div class="testimonial-author">Thomas L.</div>
+                    <div class="testimonial-role">Trader Pro - €45k payout</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">👩‍💼</div>
+                    <p>"Le support est incroyable et les conditions de trading sont parfaites pour les scalpeurs comme moi."</p>
+                    <div class="testimonial-author">Sophie M.</div>
+                    <div class="testimonial-role">Scalpeuse - €28k payout</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">👨‍💻</div>
+                    <p>"Les signaux sont précis et l'analyse technique intégrée m'a sauvé des milliers d'euros."</p>
+                    <div class="testimonial-author">Marc D.</div>
+                    <div class="testimonial-role">Swing trader - €67k payout</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à passer au niveau supérieur ?</h2>
+                <p>Rejoignez les meilleurs traders et commencez votre challenge dès aujourd'hui</p>
+                <a href="login.html?tab=register" class="btn-primary btn-large">Créer mon compte gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>🚀 PropfirmPro</h3>
+                    <p>La plateforme de prop trading qui révolutionne l'industrie.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Produits</h4>
+                    <a href="pricing.html">Tarifs</a>
+                    <a href="signals.html">Signaux</a>
+                    <a href="vip.html">VIP</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Ressources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Académie</a>
+                    <a href="#">Webinaires</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Contact</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Conditions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PropfirmPro. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Graphique en temps réel simple
+        const canvas = document.getElementById('liveChart');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let data = Array.from({length: 50}, () => Math.random() * 100 + 1000);
+            
+            function drawChart() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.strokeStyle = '#667eea';
+                ctx.lineWidth = 2;
+                
+                for (let i = 0; i < data.length - 1; i++) {
+                    const x1 = (i / data.length) * canvas.width;
+                    const y1 = canvas.height - ((data[i] - 950) / 150) * canvas.height;
+                    const x2 = ((i + 1) / data.length) * canvas.width;
+                    const y2 = canvas.height - ((data[i + 1] - 950) / 150) * canvas.height;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.stroke();
+                }
+                
+                data.push(data[data.length - 1] + (Math.random() - 0.5) * 5);
+                data.shift();
+            }
+            
+            setInterval(drawChart, 500);
+            drawChart();
+        }
+    </script>
+</body>
+</html>
